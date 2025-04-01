@@ -5,6 +5,17 @@
 {% endblock %}
 {% block titulo %}Login{% endblock %}
 {% block cuerpo %} 
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="alert alert-warning">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith %}
+
 <h1>Login</h1>
 <section class="vh-100">
     <div class="container-fluid">
